@@ -73,3 +73,27 @@ The application automatically seeds an admin user on startup:
 - **CORS Errors**: Ensure the React app is running on `http://localhost:3000`. The backend is configured to allow this origin.
 - **Database Connection**: If the app fails to start, verify your MySQL service is running and credentials in `application.properties` are correct.
 - **Port Conflict**: If port 8080 or 3000 is occupied, change them in `application.properties` (backend) or `.env` (frontend).
+
+## 🏗 System Architecture
+
+![System Architecture](architecture.png)
+## 🔄 Application Flow
+
+```
+User → React Frontend
+        ↓
+API Request (Axios)
+        ↓
+Spring Boot Controller
+        ↓
+Service Layer (Business Logic)
+        ↓
+Repository Layer (JPA)
+        ↓
+MySQL Database
+        ↓
+Response → Frontend UI Update
+```
+
+
+
