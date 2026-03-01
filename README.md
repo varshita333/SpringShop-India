@@ -2,6 +2,15 @@
 
 A full-stack, production-ready e-commerce platform built specifically for the Indian market, featuring Spring Boot 3, React 18, and MySQL.
 
+## Project Overview
+
+SpringShop-India is a scalable full-stack e-commerce platform designed
+using modern backend and frontend technologies.
+
+The system implements secure JWT-based authentication,
+role-based authorization, RESTful API architecture,
+and layered backend design following enterprise development practices.
+
 ## Features
 
 - **JWT Authentication**: Secure login and registration.
@@ -11,7 +20,28 @@ A full-stack, production-ready e-commerce platform built specifically for the In
 - **Responsive UI**: Built with Tailwind CSS, optimized for mobile and desktop.
 - **Secure Backend**: REST API with Spring Security 6 and JPA.
 - **Auto-Seeded Data**: Initial admin user and products are created automatically on first run.
+## 🛠 Tech Stack
 
+### Backend
+- Java 17
+- Spring Boot 3
+- Spring Security 6
+- Spring Data JPA
+- JWT Authentication
+
+### Frontend
+- React 18
+- Tailwind CSS
+- Axios
+
+### Database
+- MySQL
+
+### Tools
+- Maven
+- Swagger UI
+- Git & GitHub
+- 
 ## Prerequisites
 
 - **Java**: JDK 17 or higher
@@ -74,10 +104,10 @@ The application automatically seeds an admin user on startup:
 - **Database Connection**: If the app fails to start, verify your MySQL service is running and credentials in `application.properties` are correct.
 - **Port Conflict**: If port 8080 or 3000 is occupied, change them in `application.properties` (backend) or `.env` (frontend).
 
-## 🏗 System Architecture
+## System Architecture
 
 ![System Architecture](architecture.png)
-## 🔄 Application Flow
+## Application Flow
 
 ```
 User → React Frontend
@@ -94,6 +124,32 @@ MySQL Database
         ↓
 Response → Frontend UI Update
 ```
+##  JWT Authentication Flow
 
+```
+User Login Request
+        ↓
+Authentication Controller
+        ↓
+Spring Security Authentication Manager
+        ↓
+JWT Token Generated
+        ↓
+Token Sent to Client
+        ↓
+Client Sends Token in Header
+        ↓
+JWT Filter Validates Request
+        ↓
+Access Granted to Protected APIs
+```
+##  Backend Structure
+
+controller/   → Handles HTTP requests  
+service/      → Business logic processing  
+repository/   → Database interaction  
+model/        → Entity classes  
+dto/          → Data transfer objects  
+config/       → Security & JWT configuration
 
 
